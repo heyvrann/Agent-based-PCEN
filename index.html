@@ -153,10 +153,11 @@
           <p>
             where \(\Pi := \{ \pi : \mathcal{S} \to \Delta(\mathcal{A}) \}\) denotes the set of all policies.
           </p>
-          
+          <p>
             <strong>Method.</strong>
-            <p>
-            A method proposes training the agent for PCEN hyperparameter selection by defining the reward directly from downstream task performance. To do this, we pass the PCEN-transformed audio, generated using the agent’s selected hyperparameters, through a classifier and use the resulting loss to compute the reward signal. This encourages parameter choices that improve classification accuracy. Figure 1 shows a high-level diagram of this pipeline.
+          
+            Our method proposes training the agent for PCEN hyperparameter selection by defining the reward directly from downstream task performance. To do this, we pass the PCEN-transformed audio, generated using the agent’s selected hyperparameters, through a classifier and use the resulting loss to compute the reward signal. This encourages parameter choices that improve classification accuracy. Figure 1 shows a high-level diagram of this pipeline.
+            
           </p>
         </div>
         <!-- Optional method figure -->
@@ -176,6 +177,10 @@
           <p>
             Describe your experiments and findings. Below are example layouts you can copy:
             a row of training-curve plots, a row of agent rollout GIFs, and a results table.
+          </p>
+          <p>
+          <strong>Evaluation of Baseline Method</strong>
+          To motivate the limitations of the baseline, we first experiment in a fixed setting. For a fixed parameter setting, the best-performing value in the action set achieves an accuracy of around 0.58. However, when we perform per-sample grid search, the accuracy increases to approximately 0.9, indicating substantial improvement if the model can adapt its parameters dynamically. Intuitively, this suggests that a single global parameter choice is insufficient because different data samples (particularly those belonging to classes with distinct target characteristics) may require different optimal settings. A parameter that works well for one class can be suboptimal for another, leading to degraded overall performance under a fixed configuration.
           </p>
         </div>
       </div>
