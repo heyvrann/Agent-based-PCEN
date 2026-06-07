@@ -113,6 +113,46 @@
         <h2 class="title is-3">Approach</h2>
         <div class="content has-text-justified">
           <p>
+            <strong>Research objectives.</strong>
+            In this study, we primarily investigate the following objectives:
+          </p>
+
+          <ul>
+            <li>
+              <strong>Objective 1:</strong>
+              Modeling the optimization of PCEN parameters as an MDP.
+            </li>
+
+            <li>
+              <strong>Objective 2:</strong>
+              Train a reinforcement learning agent to adaptively select PCEN hyperparameters for each audio sample.
+            </li>
+
+            <li>
+              <strong>Objective 3:</strong>
+              Evaluate whether adaptive PCEN parameter selection improves audio classification performance compared with a fixed baseline method.
+            </li>
+          </ul>
+          <p>
+            <strong>Motivation / PCEN with different parameters.</strong>
+          </p>
+
+          <ul>
+            <li>
+              <strong>PCEN</strong> effectively enhances target audio signals while suppressing background noise, but performance depends strongly on hyperparameter selection.
+            </li>
+
+            <li>
+              <strong>Optimal PCEN parameters</strong> vary with signal and noise characteristics, making robust parameter selection a challenging problem.
+            </li>
+
+            <li>
+              <strong>Existing methods</strong> use fixed or learned parameters, motivating approaches that can adapt PCEN behavior to changing acoustic environments.
+            </li>
+          </ul>  
+        
+
+          <p>
             <strong>Problem setup.</strong>
             We formulate the problem as a Markov Decision Process (MDP)
             \(\mathcal{M} := (\mathcal{S}, \mathcal{A}, \mathcal{P}, r, \mu, \gamma)\),
