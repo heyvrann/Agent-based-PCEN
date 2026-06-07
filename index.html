@@ -92,7 +92,7 @@
           <h2 class="title is-3">Abstract</h2>
           <div class="content has-text-justified">
             <p>
-              In acoustic signal processing for classification tasks, robustness to noise, particularly in uncontrolled environments, remains a persistent challenge. Per-channel Energy Normalization (PCEN) has emerged as an effective alternative to traditional frontends such as log-Mel spectrograms, offering improved adaptability through a set of differentiable hyperparameters that control signal filtering. While these parameters can, in principle, be learned, their optimization is nontrivial, and fixed configurations often fail to generalize across varying signal characteristics and noise conditions. Suboptimal parameter choices may either inadequately suppress noise or inadvertently attenuate relevant signal components. \\ To address this, we propose modeling the selection of a subset of PCEN hyperparameters as a Markov Decision Process, where each audio sample defines a state and hyperparameter values correspond to actions, enabling the use of Reinforcement Learning. We intend to investigate reward-based RL using two separate methods for defining our reward model: one which is based on the resulting loss from downstream classification of the signal and another that utilize a preference-based reward. We plan to evaluate our method against fixed empirical-based parameter settings as well as sample-based parameter setting using unsupervised learning techniques.
+                 In acoustic signal processing for classification tasks, robustness to noise, particularly in uncontrolled environments, remains a persistent challenge. Per-channel Energy Normalization (PCEN) has emerged as an effective alternative to traditional frontends such as log-Mel spectrograms, offering improved adaptability through a set of differentiable hyperparameters that control signal filtering. While these parameters can, in principle, be learned, their optimization is nontrivial, and fixed configurations often fail to generalize across varying signal characteristics and noise conditions. Suboptimal parameter choices may either inadequately suppress noise or inadvertently attenuate relevant signal components. To address this, we propose modeling the selection of a subset of PCEN hyperparameters as a Markov Decision Process, where each audio sample defines a state and hyperparameter values correspond to actions, enabling the use of Reinforcement Learning. We intend to investigate reward-based RL defining our reward model based on the resulting loss from downstream classification of the signal. We evaluate our method against fixed empirical-based parameter settings.
             </p>
           </div>
         </div>
@@ -114,14 +114,46 @@
         <div class="content has-text-justified">
           <p>
             <strong>Problem setup.</strong>
-            Describe the MDP: the state space, action space, reward function, and objective.
-            You can write inline math like the discounted return
-            \( \sum_{t=0}^{\infty} \gamma^t \reward_t \), or display equations:
+            We formulate the problem as a Markov Decision Process (MDP)
+            \(\mathcal{M} := (\mathcal{S}, \mathcal{A}, \mathcal{P}, r, \mu, \gamma)\),
+            where \(\mathcal{S}\) is the state space, \(\mathcal{A}\) is the action space,
+            \(\mathcal{P}\) is the transition kernel, \(r\) is the reward function,
+            \(\mu\) is the initial state distribution, and \(\gamma \in (0,1)\) is the discount factor.
           </p>
-          <p style="text-align: center;">
-            $$ \policy^* = \arg\max_{\policy} \; \mathbb{E}_{\policy}\!\left[ \sum_{t=0}^{\infty} \gamma^t \reward(\state_t, \action_t) \right] $$
-          </p>
+
           <p>
+            We define \(\Delta(\mathcal{X})\) as the set of probability distributions over a set \(\mathcal{X}\).
+            The reward is assumed to be bounded and rescaled to \([0,1]\) without loss of generality.
+          </p>
+
+          <p>
+            In our setting, the action space corresponds to two continuous hyperparameters of the PCEN frontend:
+            \(\mathcal{A} := \mathbb{R} \times \mathbb{R}\).
+            The MDP is one-step, meaning each episode terminates immediately after a single action is taken:
+            \(\mathcal{P}(s_{\text{terminal}} \mid s_0, a) = 1\).
+          </p>
+
+          <p>
+            The reward function \(r(s,a)\) is a scalar signal computed either manually
+            or via a learned reward model (e.g., preference-based or supervised evaluation),
+            based on downstream classification performance.
+          </p>
+
+          <p>
+            Our objective is to learn an optimal policy \(\pi^*\) such that:
+          </p>
+
+          <p style="text-align: center;">
+            \[
+            \pi^* = \arg\max_{\pi \in \Pi}
+            \mathbb{E}_{s_0 \sim \mu,\; a \sim \pi(\cdot|s_0)} \left[ r(s_0, a) \right]
+            \]
+          </p>
+
+          <p>
+            where \(\Pi := \{ \pi : \mathcal{S} \to \Delta(\mathcal{A}) \}\) denotes the set of all policies.
+          </p>
+          
             <strong>Method.</strong>
             Explain your algorithm and any architectural or training-objective choices here.
           </p>
