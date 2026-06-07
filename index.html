@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- ============================================================ -->
+  <!--  TODO: Edit the meta description / keywords / title below.   -->
+  <!-- ============================================================ -->
+  <meta name="description"
+        content="A short one-sentence description of your reinforcement learning project.">
+  <meta name="keywords" content="Reinforcement Learning, RL, Final Project">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Project Title — RL Final Project</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/computer-modern/cmu-serif.css">
+
+  <!-- Styles (Bulma + project) -->
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <!-- MathJax: lets you write LaTeX math like \( ... \) and $$ ... $$ -->
+  <script src="https://polyfill-fastly.cloudflare.com/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script>
+    MathJax = {
+      tex: {
+        // Define reusable macros here, e.g. \state, \action, \reward.
+        macros: {
+          state:  "\\mathbf{s}",
+          action: "\\mathbf{a}",
+          reward: "r",
+          policy: "\\pi"
+        }
+      }
+    };
+  </script>
+
+  <!-- JS libraries -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+
+<!-- ================================================================ -->
+<!--  HERO: title, authors, affiliations, and link buttons.          -->
+<!-- ================================================================ -->
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title"><strong>Project Title</strong></h1>
+          <h2 class="title is-3 publication-title">An Optional Subtitle Describing the Method</h2>
+
+          <!-- Authors -->
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="#">Your Name</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="#">Teammate Two</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="#">Teammate Three</a><sup>1</sup></span>
+          </div>
+
+          <!-- Affiliations -->
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Your University, Course Name (e.g. CS 285 / RL Final Project)</span>
+          </div>
+
+          <!-- Link buttons -->
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- Paper / Report -->
+              <span class="link-block">
+                <a href="#" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                  <span>Report</span>
+                </a>
+              </span>
+              <!-- Code -->
+              <span class="link-block">
+                <a href="https://github.com/USERNAME/REPO" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fab fa-github"></i></span>
+                  <span>Code</span>
+                </a>
+              </span>
+              <!-- Slides / Video (optional) -->
+              <span class="link-block">
+                <a href="#" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fas fa-film"></i></span>
+                  <span>Video</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ================================================================ -->
+<!--  TEASER + ABSTRACT                                               -->
+<!-- ================================================================ -->
+<section class="section" style="padding-top: 0.5rem;">
+  <div class="container is-max-desktop">
+
+    <!-- Teaser video or image. Drop a file in static/videos/ or static/images/. -->
+    <div class="has-text-centered" style="margin-bottom: 2rem;">
+      <video autoplay muted loop playsinline width="70%"
+             style="border-radius: 7px; border: 1px solid #c4c6c8; pointer-events: none;">
+        <source src="./static/videos/teaser.mp4" type="video/mp4">
+      </video>
+      <!-- Or use an image instead:
+      <img src="./static/images/teaser.png" width="70%" style="border-radius: 7px;">
+      -->
+    </div>
+
+    <!-- Abstract -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <div class="abstract-box">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              Write your abstract here. Summarize the problem you tackle, the RL approach you
+              use (e.g. PPO, SAC, DQN, model-based planning), the environment(s) you evaluate on,
+              and your headline result in a few sentences.
+            </p>
+          </div>
+        </div>
+        <p style="color: #aaa; font-size: 0.88rem; margin-top: 2.5rem; text-align: justify;">
+          <strong style="color: #000;">TL;DR:</strong> One punchy sentence describing what you did and the key takeaway.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ================================================================ -->
+<!--  METHOD / APPROACH                                               -->
+<!-- ================================================================ -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Approach</h2>
+        <div class="content has-text-justified">
+          <p>
+            <strong>Problem setup.</strong>
+            Describe the MDP: the state space, action space, reward function, and objective.
+            You can write inline math like the discounted return
+            \( \sum_{t=0}^{\infty} \gamma^t \reward_t \), or display equations:
+          </p>
+          <p style="text-align: center;">
+            $$ \policy^* = \arg\max_{\policy} \; \mathbb{E}_{\policy}\!\left[ \sum_{t=0}^{\infty} \gamma^t \reward(\state_t, \action_t) \right] $$
+          </p>
+          <p>
+            <strong>Method.</strong>
+            Explain your algorithm and any architectural or training-objective choices here.
+          </p>
+        </div>
+        <!-- Optional method figure -->
+        <img src="./static/images/method.png" alt="Method overview" style="width: 100%;">
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ================================================================ -->
+<!--  RESULTS: figures, GIFs, and a comparison table                 -->
+<!-- ================================================================ -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3 has-text-centered">Results</h2>
+        <div class="content has-text-justified">
+          <p>
+            Describe your experiments and findings. Below are example layouts you can copy:
+            a row of training-curve plots, a row of agent rollout GIFs, and a results table.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Row of plots / images -->
+    <div class="columns is-centered">
+      <div class="column is-one-third has-text-centered">
+        <img src="./static/images/reward_curve.png" alt="Reward curve" style="width: 100%;">
+        <p class="is-size-6 mt-2"><strong>Learning curve</strong></p>
+      </div>
+      <div class="column is-one-third has-text-centered">
+        <img src="./static/images/ablation.png" alt="Ablation" style="width: 100%;">
+        <p class="is-size-6 mt-2"><strong>Ablation</strong></p>
+      </div>
+    </div>
+
+    <!-- Row of agent rollout GIFs -->
+    <div class="columns is-centered" style="margin-top: 1rem;">
+      <div class="column is-one-third has-text-centered">
+        <img src="./static/videos/rollout_env1.gif" alt="Env 1 rollout" style="width: 100%;">
+        <p class="is-size-6 mt-2"><strong>Environment 1</strong></p>
+      </div>
+      <div class="column is-one-third has-text-centered">
+        <img src="./static/videos/rollout_env2.gif" alt="Env 2 rollout" style="width: 100%;">
+        <p class="is-size-6 mt-2"><strong>Environment 2</strong></p>
+      </div>
+    </div>
+
+    <!-- Comparison table -->
+    <div class="columns is-centered" style="margin-top: 2rem;">
+      <div class="column is-four-fifths">
+        <p style="font-size: 0.9em; margin-bottom: 0.75rem; text-align: justify;">
+          <strong>Main results.</strong> Mean episodic return (± std over N seeds). Best per column in <strong>bold</strong>.
+        </p>
+        <table class="table is-bordered is-striped is-hoverable is-fullwidth" style="text-align: center;">
+          <thead>
+            <tr>
+              <th style="text-align: left;">Method</th>
+              <th>Environment 1 ↑</th>
+              <th>Environment 2 ↑</th>
+              <th>Environment 3 ↑</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="text-align: left;">Baseline</td>
+              <td>000 ± 0</td><td>000 ± 0</td><td>000 ± 0</td>
+            </tr>
+            <tr style="border-top: 2px solid #363636;">
+              <td style="text-align: left;"><strong>Ours</strong></td>
+              <td><strong>000 ± 0</strong></td><td><strong>000 ± 0</strong></td><td><strong>000 ± 0</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ================================================================ -->
+<!--  CITATION                                                        -->
+<!-- ================================================================ -->
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">Citation (BibTeX)</h2>
+    <pre><code>@misc{yourproject2026,
+  author = {Your Name and Teammate Two and Teammate Three},
+  title  = {Project Title: An Optional Subtitle},
+  year   = {2026},
+  note   = {RL Final Project},
+}</code></pre>
+  </div>
+</section>
+
+
+<!-- ================================================================ -->
+<!--  FOOTER                                                          -->
+<!-- ================================================================ -->
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8 has-text-centered">
+        <p style="font-size: 0.85rem; color: #888;">
+          This website is built on the
+          <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a> project page template.
+          Source available on
+          <a href="https://github.com/USERNAME/REPO">GitHub</a>.
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+</body>
+</html>
