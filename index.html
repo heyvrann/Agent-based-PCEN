@@ -155,7 +155,7 @@
           </p>
           
             <strong>Method.</strong>
-            Explain your algorithm and any architectural or training-objective choices here.
+            A method proposes training the agent for PCEN hyperparameter selection by defining the reward directly from downstream task performance. To do this, we pass the PCEN-transformed audio, generated using the agent’s selected hyperparameters, through a classifier and use the resulting loss to compute the reward signal. This encourages parameter choices that improve classification accuracy. Figure 1 shows a high-level diagram of this pipeline.
           </p>
         </div>
         <!-- Optional method figure -->
