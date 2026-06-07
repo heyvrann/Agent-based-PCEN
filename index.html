@@ -2,21 +2,16 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <!-- ============================================================ -->
-  <!--  TODO: Edit the meta description / keywords / title below.   -->
-  <!-- ============================================================ -->
   <meta name="description"
-        content="A short one-sentence description of your reinforcement learning project.">
-  <meta name="keywords" content="Reinforcement Learning, RL, Final Project">
+        content="RL for dynamic hyperparameter optimization in PCEN">
+  <meta name="keywords" content="PCEN, RL">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Project Title — RL Final Project</title>
+  <title>Agent-based PCEN: Reinforcement Learning for Dynamic Hyperparameter Optimization in Per-channel Energy Normalization</title>
 
-  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/computer-modern/cmu-serif.css">
 
-  <!-- Styles (Bulma + project) -->
   <link rel="stylesheet" href="./static/css/bulma.min.css">
   <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
   <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
@@ -24,14 +19,11 @@
   <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
-
-  <!-- MathJax: lets you write LaTeX math like \( ... \) and $$ ... $$ -->
   <script src="https://polyfill-fastly.cloudflare.com/v3/polyfill.min.js?features=es6"></script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   <script>
     MathJax = {
       tex: {
-        // Define reusable macros here, e.g. \state, \action, \reward.
         macros: {
           state:  "\\mathbf{s}",
           action: "\\mathbf{a}",
@@ -41,8 +33,6 @@
       }
     };
   </script>
-
-  <!-- JS libraries -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="./static/js/fontawesome.all.min.js"></script>
   <script src="./static/js/bulma-carousel.min.js"></script>
@@ -52,58 +42,35 @@
 <body>
 
 
-<!-- ================================================================ -->
-<!--  HERO: title, authors, affiliations, and link buttons.          -->
-<!-- ================================================================ -->
 <section class="hero">
   <div class="hero-body">
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title"><strong>Project Title</strong></h1>
-          <h2 class="title is-3 publication-title">An Optional Subtitle Describing the Method</h2>
+          <h1 class="title is-1 publication-title"><strong>Agent-based PCEN</strong></h1>
+          <h2 class="title is-3 publication-title">Reinforcement Learning for Dynamic Hyperparameter Optimization in Per-channel Energy Normalization</h2>
 
-          <!-- Authors -->
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              <a href="#">Your Name</a><sup>1</sup>,</span>
+              <a href="#">Hao-Yu Tsai</a><sup>1</sup>,</span>
             <span class="author-block">
-              <a href="#">Teammate Two</a><sup>1</sup>,</span>
+              <a href="#">Hui-Ying Shih</a><sup>2</sup>,</span>
             <span class="author-block">
-              <a href="#">Teammate Three</a><sup>1</sup></span>
+              <a href="#">Spencer Perkins</a><sup>3</sup></span>
           </div>
 
-          <!-- Affiliations -->
           <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup>1</sup>Your University, Course Name (e.g. CS 285 / RL Final Project)</span>
+            <span class="author-block"><sup>1</sup>Department of Computer Science, National Yang Ming Chiao Tung University</span>
+            <span class="author-block"><sup>2</sup>Department of Electrical Engineering, National Tsing Hua University, Hsinchu, Taiwan</span>
+            <span class="author-block"><sup>3</sup>Department of Electrical Engineering and Computer Science (EECS IGP), National Yang Ming Chiao Tung University</span>
           </div>
 
-          <!-- Link buttons -->
-          <div class="column has-text-centered">
-            <div class="publication-links">
-              <!-- Paper / Report -->
-              <span class="link-block">
-                <a href="#" class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon"><i class="fas fa-file-pdf"></i></span>
-                  <span>Report</span>
-                </a>
-              </span>
-              <!-- Code -->
-              <span class="link-block">
-                <a href="https://github.com/USERNAME/REPO" class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon"><i class="fab fa-github"></i></span>
-                  <span>Code</span>
-                </a>
-              </span>
-              <!-- Slides / Video (optional) -->
-              <span class="link-block">
-                <a href="#" class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon"><i class="fas fa-film"></i></span>
-                  <span>Video</span>
-                </a>
-              </span>
-            </div>
+          <div class="is-size-6 publication-authors" style="font-family: 'IBM Plex Mono', monospace; margin-top: 0.4rem;">
+            <span class="author-block"><sup>1</sup> heyvrann@gmail.com</span>
+            <span class="author-block"><sup>2</sup> s114061583@m114.nthu.edu.tw</span>
+            <span class="author-block"><sup>3</sup> spencer.perkins8a@gmail.com</span>
           </div>
+
         </div>
       </div>
     </div>
@@ -111,21 +78,11 @@
 </section>
 
 
-<!-- ================================================================ -->
-<!--  TEASER + ABSTRACT                                               -->
-<!-- ================================================================ -->
 <section class="section" style="padding-top: 0.5rem;">
   <div class="container is-max-desktop">
 
-    <!-- Teaser video or image. Drop a file in static/videos/ or static/images/. -->
     <div class="has-text-centered" style="margin-bottom: 2rem;">
-      <video autoplay muted loop playsinline width="70%"
-             style="border-radius: 7px; border: 1px solid #c4c6c8; pointer-events: none;">
-        <source src="./static/videos/teaser.mp4" type="video/mp4">
-      </video>
-      <!-- Or use an image instead:
-      <img src="./static/images/teaser.png" width="70%" style="border-radius: 7px;">
-      -->
+      <img src="./static/images/teaser.png" width="70%" style="border-radius: 7px; border: 1px solid #c4c6c8;">
     </div>
 
     <!-- Abstract -->
@@ -135,14 +92,12 @@
           <h2 class="title is-3">Abstract</h2>
           <div class="content has-text-justified">
             <p>
-              Write your abstract here. Summarize the problem you tackle, the RL approach you
-              use (e.g. PPO, SAC, DQN, model-based planning), the environment(s) you evaluate on,
-              and your headline result in a few sentences.
+              In acoustic signal processing for classification tasks, robustness to noise, particularly in uncontrolled environments, remains a persistent challenge. Per-channel Energy Normalization (PCEN) has emerged as an effective alternative to traditional frontends such as log-Mel spectrograms, offering improved adaptability through a set of differentiable hyperparameters that control signal filtering. While these parameters can, in principle, be learned, their optimization is nontrivial, and fixed configurations often fail to generalize across varying signal characteristics and noise conditions. Suboptimal parameter choices may either inadequately suppress noise or inadvertently attenuate relevant signal components. \\ To address this, we propose modeling the selection of a subset of PCEN hyperparameters as a Markov Decision Process, where each audio sample defines a state and hyperparameter values correspond to actions, enabling the use of Reinforcement Learning. We intend to investigate reward-based RL using two separate methods for defining our reward model: one which is based on the resulting loss from downstream classification of the signal and another that utilize a preference-based reward. We plan to evaluate our method against fixed empirical-based parameter settings as well as sample-based parameter setting using unsupervised learning techniques.
             </p>
           </div>
         </div>
         <p style="color: #aaa; font-size: 0.88rem; margin-top: 2.5rem; text-align: justify;">
-          <strong style="color: #000;">TL;DR:</strong> One punchy sentence describing what you did and the key takeaway.
+          <strong style="color: #000;">TL;DR:</strong> We will model hyperparameter selection for Per-channel Energy Normalization as a Markov Decision Process and use RL to train an agent to choose parameter selections given an input audio signal.
         </p>
       </div>
     </div>
@@ -151,9 +106,6 @@
 </section>
 
 
-<!-- ================================================================ -->
-<!--  METHOD / APPROACH                                               -->
-<!-- ================================================================ -->
 <section class="section">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
@@ -182,9 +134,6 @@
 </section>
 
 
-<!-- ================================================================ -->
-<!--  RESULTS: figures, GIFs, and a comparison table                 -->
-<!-- ================================================================ -->
 <section class="section">
   <div class="container is-max-desktop">
     <div class="columns is-centered">
@@ -256,40 +205,16 @@
 </section>
 
 
-<!-- ================================================================ -->
-<!--  CITATION                                                        -->
-<!-- ================================================================ -->
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">Citation (BibTeX)</h2>
-    <pre><code>@misc{yourproject2026,
-  author = {Your Name and Teammate Two and Teammate Three},
-  title  = {Project Title: An Optional Subtitle},
+    <pre><code>@misc{agentbasedpcen2026,
+  author = {Hao-Yu, Tsai and Hui-Ying Shih and Spencer Perkins},
+  title  = {Agent-based PCEN: Reinforcement Learning for Dynamic Hyperparameter Optimization in Per-channel Energy Normalization},
   year   = {2026},
-  note   = {RL Final Project},
 }</code></pre>
   </div>
 </section>
-
-
-<!-- ================================================================ -->
-<!--  FOOTER                                                          -->
-<!-- ================================================================ -->
-<footer class="footer">
-  <div class="container">
-    <div class="columns is-centered">
-      <div class="column is-8 has-text-centered">
-        <p style="font-size: 0.85rem; color: #888;">
-          This website is built on the
-          <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a> project page template.
-          Source available on
-          <a href="https://github.com/USERNAME/REPO">GitHub</a>.
-        </p>
-      </div>
-    </div>
-  </div>
-</footer>
-
 
 </body>
 </html>
