@@ -154,7 +154,21 @@
               <strong>Existing methods</strong> use fixed or learned parameters, motivating approaches that can adapt PCEN behavior to changing acoustic environments.
             </li>
           </ul>  
-        
+          <figure style="margin: 1rem 0;">
+            <img src="./static/images/alpha_params.png" alt="Alpha PCEN parameters" style="width: 100%;">
+            <figcaption style="text-align: center; font-size: 0.9rem; color: #555;">
+              Effect of &alpha; parameter on PCEN output.
+            </figcaption>
+          </figure>
+
+          <figure style="margin: 1rem 0;">
+            <img src="./static/images/t_params.png" alt="T PCEN parameters" style="width: 100%;">
+            <figcaption style="text-align: center; font-size: 0.9rem; color: #555;">
+              Effect of temporal parameter T on PCEN output.
+            </figcaption>
+          </figure>
+
+
           <hr style="margin: 2rem 0; border: none; border-top: 1px solid #ddd;">
           <p>
             <strong>Problem setup.</strong>
@@ -208,7 +222,12 @@
           </p>
         </div>
         <!-- Optional method figure -->
-        <img src="./static/images/method.png" alt="Method overview" style="width: 100%;">
+        <figure style="margin: 1rem 0;">
+          <img src="./static/images/method.png" alt="Method overview" style="width: 100%;">
+          <figcaption style="text-align: center; font-size: 0.9rem; color: #555;">
+            High-level structure of our method.
+          </figcaption>
+        </figure>
       </div>
     </div>
   </div>
@@ -284,6 +303,12 @@
             </tr>
           </tbody>
         </table>
+        <p>
+          <strong>Practical implications</strong>
+          The results demonstrate the potential of a <strong>drop-in parameter selection agent</strong> for improving <strong>PCEN-based preprocessing</strong> in acoustic classification pipelines. 
+          In particular, <strong>agent-driven PCEN optimization</strong> improves classification performance across diverse sound classes. 
+          Overall, this suggests a reduction in reliance on empirical parameter selection and task-specific hyperparameter tuning, supporting more adaptive preprocessing under changing acoustic conditions.
+        </p>
       </div>
     </div>
 
