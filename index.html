@@ -224,6 +224,11 @@
             High-level structure of our method.
           </figcaption>
         </figure>
+        <p>
+          <strong>Dataset</strong>
+          The dataset was derived from AudioSet, a large-scale collection of human-labeled audio events developed by Google. AudioSet provides YouTube video IDs with corresponding start and end timestamps for annotated audio segments. We downloaded the associated audio and extracted segments based on these timestamps. 
+          We restrict the dataset to 10-second clips and retain only labels with more than 1,000 samples to ensure consistent input length and sufficient data per class. After filtering, the final dataset contains 12 labels, each with at least 1,000 audio clips.
+        </p>
       </div>
     </div>
   </div>
