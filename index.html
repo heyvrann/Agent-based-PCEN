@@ -81,10 +81,6 @@
 <section class="section" style="padding-top: 0.5rem;">
   <div class="container is-max-desktop">
 
-    <div class="has-text-centered" style="margin-bottom: 2rem;">
-      <img src="./static/images/teaser.png" width="70%" style="border-radius: 7px; border: 1px solid #c4c6c8;">
-    </div>
-
     <!-- Abstract -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
@@ -249,8 +245,25 @@
           <hr style="margin: 2rem 0; border: none; border-top: 1px solid #ddd;">
 
           <p>
-          <strong>Our Method</strong>
-          NEED TO ADD OUR RESULTS
+          <strong>Our Method.</strong>
+          We train a SAC agent whose state is a pre-computed encoder embedding (AST or BEATs) of the mel spectrogram.
+          In the discrete setting, the action space is defined as
+          \(\alpha \in \{0.5,\,0.625,\,0.75,\,0.875,\,1.0\}\) and
+          \(T \in \{0.015,\,0.05,\,0.15,\,0.5,\,1.5\}\),
+          where the five T values are sampled on a log scale to better cover the meaningful dynamic range of the smoothing parameter.
+          In the continuous setting, \(\alpha \in (0.2,\,1.0)\) and \(T \in (0.005,\,3.0)\).
+          Rather than using a sparse classification signal directly, we adopt the reward
+          \[
+            r = p_{\text{true}} - \max_{k \neq y} p_k \;+\; \lambda \cdot \mathbf{1}[\hat{y} = y],
+          \]
+          with \(\lambda = 1\), which we found empirically to guide the policy toward accuracy-improving actions more reliably than cross-entropy-based rewards.
+          The critic in the discrete setting outputs a Q-value for every action given the state,
+          while in the continuous setting it takes a (state, action) pair and produces a scalar value.
+          </p>
+          <p>
+          The action heatmap (discrete) and scatter plot (continuous) reveal that the learned policy does not collapse to a single point; instead it distributes actions across a broad region, with a relative concentration toward higher \(\alpha\) values (\(\approx 0.75\)–\(1.0\)) and moderate \(T\) values (\(\approx 0.15\)–\(0.5\)).
+          This suggests the agent learns a soft preference rather than a fixed assignment, reflecting the diversity of optimal parameters across audio samples.
+          As reported in the main results table, the agent consistently outperforms the fixed baseline under all three evaluation settings.
           </p>
         </div>
       </div>
